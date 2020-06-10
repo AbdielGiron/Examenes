@@ -22,12 +22,9 @@
                         Me.Hide()
                         Menu_Principal.Show()
                     Else
-
                         MsgBox("El Usuaio Ingresado no existe", "iniciar Sesion ", MessageBoxButtons.OK)
                     End If
-
                 End If
-
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
