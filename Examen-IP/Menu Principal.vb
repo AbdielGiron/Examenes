@@ -25,4 +25,8 @@
     Private Sub btnRegistros_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+
+    End Sub
 End Class

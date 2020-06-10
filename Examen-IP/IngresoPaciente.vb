@@ -1,4 +1,6 @@
-﻿Public Class IngresoPaciente
+﻿Imports System.ComponentModel
+
+Public Class IngresoPaciente
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim ID, total As Integer
@@ -6,21 +8,21 @@
         Dim Atlántida, Choluteca, Colón, Comayagua, Copán, Cortés, ElParaísoFrancisco, Morazán, GraciasaDios, Intibucá, IslasdelaBahía, LaPaz, Lempira, Ocotepeque, Olancho, SantaBárbara, Valle, Yoro As Integer
 
         Try
-            If Me.ValidateChildren And txtNombre.Text <> String.Empty And cmbDepartamento.Text <> String.Empty And txtMunicipio.Text <> String.Empty And (chkPositivo.Checked = True Or chkNegativo.Checked = True) And (CheckBox1.Checked = True Or CheckBox2.Checked = True Or CheckBox3.Checked = True Or CheckBox4.Checked = True Or CheckBox5.Checked = True Or CheckBox6.Checked = True) Then
+            If Me.ValidateChildren And TextBox1.Text <> String.Empty And cmbDepartamento.Text <> String.Empty And TextBox1.Text <> String.Empty And (chkPositivo.Checked = True Or chkNegativo.Checked = True) And (CheckBox1.Checked = True Or CheckBox2.Checked = True Or CheckBox3.Checked = True Or CheckBox4.Checked = True Or CheckBox5.Checked = True Or CheckBox6.Checked = True) Then
                 ID += total + 1
                 If chkPositivo.Checked = True Then
 
                     listBoxID.Items.Add(ID)
-                    ListBoxNombre.Items.Add(txtNombre.Text)
+                    ListBoxNombre.Items.Add(TextBox1.Text)
                     ListBoxEdad.Items.Add(txtEdad.Text)
-                    ListBoxMunicipio.Items.Add(txtMunicipio.Text)
+                    ListBoxMunicipio.Items.Add(TextBox1.Text)
                     ListBoxDepartamento.Items.Add(cmbDepartamento.SelectedItem.ToString)
                     ListBoxResultado.Items.Add("Positivo")
                 Else
                     listBoxID.Items.Add(ID)
-                    ListBoxNombre.Items.Add(txtNombre.Text)
+                    ListBoxNombre.Items.Add(TextBox1.Text)
                     ListBoxEdad.Items.Add(txtEdad.Text)
-                    ListBoxMunicipio.Items.Add(txtMunicipio.Text)
+                    ListBoxMunicipio.Items.Add(TextBox1.Text)
                     ListBoxDepartamento.Items.Add(cmbDepartamento.SelectedItem.ToString)
                     ListBoxResultado.Items.Add("Negativo")
                 End If
@@ -88,10 +90,10 @@
 
 
                 MessageBox.Show("Se ha registrado Exitosamente", "INGRESO DEL PACIENTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                txtNombre.Clear()
+                TextBox1.Clear()
                 txtEdad.Clear()
                 cmbDepartamento.SelectedIndex = False
-                txtMunicipio.Clear()
+                TextBox1.Clear()
                 cmbDepartamento.Text = ""
                 chkPositivo.Checked = False
                 chkNegativo.Checked = False
@@ -143,4 +145,43 @@
         End If
     End Sub
 
+    Private Sub txtNombre_MouseHover(sender As Object, e As EventArgs) Handles TextBox1.MouseHover
+        ToolTip.SetToolTip(TextBox1, "Nombre de Paciente")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtEdad_MouseHover(sender As Object, e As EventArgs) Handles txtEdad.MouseHover
+        ToolTip.SetToolTip(txtEdad, "Edad del Paciente")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtMunicipio_MouseHover(sender As Object, e As EventArgs) Handles txtMunicipio.MouseHover
+        ToolTip.SetToolTip(txtMunicipio, "Agregue el municipio")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub cmbDepartamento_MouseHover(sender As Object, e As EventArgs) Handles cmbDepartamento.MouseHover
+        ToolTip.SetToolTip(cmbDepartamento, "Agregue el Departamento")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnAgregar_MouseHover(sender As Object, e As EventArgs) Handles btnAgregar.MouseHover
+        ToolTip.SetToolTip(btnAgregar, "Agregar el paciente")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+ 
+    Private Sub TextBox1_Validating(sender As Object, e As CancelEventArgs) Handles TextBox1.Validating
+
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorProvider1.SetError(sender, "")
+        Else
+            Me.ErrorProvider1.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
 End Class

@@ -22,7 +22,9 @@ Partial Class IngresoPaciente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.cmbDepartamento = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.chkNegativo = New System.Windows.Forms.CheckBox()
@@ -36,7 +38,6 @@ Partial Class IngresoPaciente
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.txtMunicipio = New System.Windows.Forms.MaskedTextBox()
         Me.txtEdad = New System.Windows.Forms.MaskedTextBox()
-        Me.txtNombre = New System.Windows.Forms.MaskedTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -49,20 +50,22 @@ Partial Class IngresoPaciente
         Me.ListBoxNombre = New System.Windows.Forms.ListBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.listBoxID = New System.Windows.Forms.ListBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ListBoxEstado = New System.Windows.Forms.ListBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -72,16 +75,17 @@ Partial Class IngresoPaciente
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.cmbDepartamento)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.txtMunicipio)
         Me.GroupBox1.Controls.Add(Me.txtEdad)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -92,6 +96,13 @@ Partial Class IngresoPaciente
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informacion del paciente"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(143, 39)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 17
         '
         'cmbDepartamento
         '
@@ -231,13 +242,6 @@ Partial Class IngresoPaciente
         Me.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtEdad.ValidatingType = GetType(Integer)
         '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(128, 39)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(217, 20)
-        Me.txtNombre.TabIndex = 8
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -355,15 +359,6 @@ Partial Class IngresoPaciente
         Me.Label6.TabIndex = 68
         Me.Label6.Text = "Municipio"
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox6.Location = New System.Drawing.Point(904, 29)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(115, 50)
-        Me.PictureBox6.TabIndex = 67
-        Me.PictureBox6.TabStop = False
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -373,15 +368,6 @@ Partial Class IngresoPaciente
         Me.Label8.Size = New System.Drawing.Size(84, 18)
         Me.Label8.TabIndex = 66
         Me.Label8.Text = "Resultado"
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox5.Location = New System.Drawing.Point(700, 29)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(101, 50)
-        Me.PictureBox5.TabIndex = 65
-        Me.PictureBox5.TabStop = False
         '
         'Label9
         '
@@ -393,15 +379,6 @@ Partial Class IngresoPaciente
         Me.Label9.TabIndex = 64
         Me.Label9.Text = "Edad"
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox4.Location = New System.Drawing.Point(640, 29)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(61, 50)
-        Me.PictureBox4.TabIndex = 63
-        Me.PictureBox4.TabStop = False
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -412,15 +389,6 @@ Partial Class IngresoPaciente
         Me.Label10.TabIndex = 62
         Me.Label10.Text = "Nombre"
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox3.Location = New System.Drawing.Point(440, 29)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(201, 50)
-        Me.PictureBox3.TabIndex = 61
-        Me.PictureBox3.TabStop = False
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -430,24 +398,6 @@ Partial Class IngresoPaciente
         Me.Label11.Size = New System.Drawing.Size(24, 18)
         Me.Label11.TabIndex = 60
         Me.Label11.Text = "ID"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox2.Location = New System.Drawing.Point(393, 29)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(48, 50)
-        Me.PictureBox2.TabIndex = 59
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(394, 29)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(771, 50)
-        Me.PictureBox1.TabIndex = 58
-        Me.PictureBox1.TabStop = False
         '
         'listBoxID
         '
@@ -486,6 +436,64 @@ Partial Class IngresoPaciente
         Me.ListBoxEstado.Name = "ListBoxEstado"
         Me.ListBoxEstado.Size = New System.Drawing.Size(106, 349)
         Me.ListBoxEstado.TabIndex = 79
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox6.Location = New System.Drawing.Point(904, 29)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(115, 50)
+        Me.PictureBox6.TabIndex = 67
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox5.Location = New System.Drawing.Point(700, 29)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(101, 50)
+        Me.PictureBox5.TabIndex = 65
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox4.Location = New System.Drawing.Point(640, 29)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(61, 50)
+        Me.PictureBox4.TabIndex = 63
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.Location = New System.Drawing.Point(440, 29)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(201, 50)
+        Me.PictureBox3.TabIndex = 61
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Location = New System.Drawing.Point(393, 29)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(48, 50)
+        Me.PictureBox2.TabIndex = 59
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Location = New System.Drawing.Point(394, 29)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(771, 50)
+        Me.PictureBox1.TabIndex = 58
+        Me.PictureBox1.TabStop = False
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'IngresoPaciente
         '
@@ -531,6 +539,7 @@ Partial Class IngresoPaciente
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -544,11 +553,9 @@ Partial Class IngresoPaciente
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents btnAgregar As Button
-    Friend WithEvents txtMunicipio As MaskedTextBox
     Friend WithEvents txtEdad As MaskedTextBox
     Friend WithEvents chkNegativo As CheckBox
     Friend WithEvents chkPositivo As CheckBox
-    Friend WithEvents txtNombre As MaskedTextBox
     Friend WithEvents ListBoxDepartamento As ListBox
     Friend WithEvents ListBoxMunicipio As ListBox
     Friend WithEvents ListBoxResultado As ListBox
@@ -577,4 +584,8 @@ Partial Class IngresoPaciente
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtMunicipio As MaskedTextBox
+    Friend WithEvents ToolTip As ToolTip
 End Class

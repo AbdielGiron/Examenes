@@ -24,9 +24,9 @@ Partial Class Menu_Principal
     Private Sub InitializeComponent()
         Me.PanelTitulo = New System.Windows.Forms.Panel()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnIngresarPaciente = New System.Windows.Forms.Button()
-        Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.PanelMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +49,15 @@ Partial Class Menu_Principal
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(250, 621)
         Me.PanelMenu.TabIndex = 1
+        '
+        'PanelFormularios
+        '
+        Me.PanelFormularios.BackColor = System.Drawing.Color.White
+        Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelFormularios.Location = New System.Drawing.Point(250, 40)
+        Me.PanelFormularios.Name = "PanelFormularios"
+        Me.PanelFormularios.Size = New System.Drawing.Size(1190, 621)
+        Me.PanelFormularios.TabIndex = 4
         '
         'btnSalir
         '
@@ -85,15 +94,6 @@ Partial Class Menu_Principal
         Me.btnIngresarPaciente.TabIndex = 0
         Me.btnIngresarPaciente.Text = "Ingresar Paciente"
         Me.btnIngresarPaciente.UseVisualStyleBackColor = False
-        '
-        'PanelFormularios
-        '
-        Me.PanelFormularios.BackColor = System.Drawing.Color.White
-        Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelFormularios.Location = New System.Drawing.Point(250, 40)
-        Me.PanelFormularios.Name = "PanelFormularios"
-        Me.PanelFormularios.Size = New System.Drawing.Size(1190, 621)
-        Me.PanelFormularios.TabIndex = 4
         '
         'Menu_Principal
         '
