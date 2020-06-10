@@ -51,31 +51,37 @@
                     Case 2
                         Choluteca += 1
                     Case 3
-                        Colón
+                        Colón += 1
                     Case 4
-                        Comayagua
+                        Comayagua += 1
                     Case 5
-                        Copán
+                        Copán += 1
                     Case 6
-                        Cortés
+                        Cortés += 1
                     Case 7
-                        ElParaísoFrancisco
+                        ElParaísoFrancisco += 1
                     Case 8
-                        Morazán
+                        Morazán += 1
                     Case 9
-                        GraciasaDios
+                        GraciasaDios += 1
                     Case 10
-                        Intibucá
+                        Intibucá += 1
                     Case 11
-                        IslasdelaBahí
+                        IslasdelaBahía += 1
                     Case 12
+                        LaPaz += 1
                     Case 13
+                        Lempira += 1
                     Case 14
+                        Ocotepeque += 1
                     Case 15
+                        Olancho += 1
                     Case 16
+                        SantaBárbara += 1
                     Case 17
+                        Valle += 1
                     Case 18
-
+                        Yoro += 1
 
 
                 End Select
@@ -111,29 +117,29 @@
     Private Sub chkPositivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkPositivo.CheckedChanged
         If chkPositivo.Checked = True Then
             chkNegativo.Enabled = False
-            CheckBox3.Checked = True
-            CheckBox4.Checked = True
-            CheckBox5.Checked = True
-            CheckBox6.Checked = True
+            CheckBox3.Enabled = True
+            CheckBox4.Enabled = True
+            CheckBox5.Enabled = True
+            CheckBox6.Enabled = True
 
         Else
             chkNegativo.Enabled = True
-            CheckBox3.Checked = False
-            CheckBox4.Checked = False
-            CheckBox5.Checked = False
-            CheckBox6.Checked = False
+            CheckBox3.Enabled = False
+            CheckBox4.Enabled = False
+            CheckBox5.Enabled = False
+            CheckBox6.Enabled = False
         End If
     End Sub
 
     Private Sub chkNegativo_CheckedChanged(sender As Object, e As EventArgs) Handles chkNegativo.CheckedChanged
         If chkNegativo.Checked = True Then
             chkPositivo.Enabled = False
-            CheckBox1.Checked = False
-            CheckBox2.Checked = False
+            CheckBox1.Enabled = True
+            CheckBox2.Enabled = True
         Else
             chkPositivo.Enabled = True
-            CheckBox1.Checked = True
-            CheckBox2.Checked = True
+            CheckBox1.Enabled = False
+            CheckBox2.Enabled = False
         End If
     End Sub
 
