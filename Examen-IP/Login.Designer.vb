@@ -78,14 +78,14 @@ Partial Class Login
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(258, 240)
+        Me.btnIngresar.Location = New System.Drawing.Point(261, 254)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
         Me.btnIngresar.TabIndex = 6
-        Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.Text = "Agregar"
         Me.btnIngresar.UseVisualStyleBackColor = True
         '
-        'Form1
+        'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -96,7 +96,7 @@ Partial Class Login
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Form1"
+        Me.Name = "Login"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()

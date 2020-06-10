@@ -9,24 +9,26 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub btnIngresar_Click_1(sender As Object, e As EventArgs) Handles btnIngresar.Click
 
-        Try
-            If Me.ValidateChildren And txtUsuario.Text = "" And txtContraseña.Text = "" Then
-                If txtUsuario.Text = usuario And txtContraseña.Text = contraseña Then
-                    Me.Hide()
-                    IngresoPaciente.Show()
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
 
-                Else
-                    MsgBox("El Usuaio Ingresado no existe", "iniciar Sesion ", MessageBoxButtons.OK)
-                End If
+
+        If txtUsuario.Text = "" And txtContraseña.Text = "" Then
+            MessageBox.Show("ERROR AL INGRESAR LOS DATOS", "INGRESO DEL PACIENTE", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+
+            If (txtUsuario.Text = "Administrador" Or txtUsuario.Text = "administrador") And txtContraseña.Text = "SinHacer2020" Then
+                Me.Hide()
+                Menu_Principal.Show()
+            Else
+
+                MsgBox("El Usuaio Ingresado no existe", "iniciar Sesion ", MessageBoxButtons.OK)
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+
+        End If
+
+
     End Sub
-
-
 
 
 End Class
