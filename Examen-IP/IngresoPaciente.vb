@@ -175,7 +175,7 @@ Public Class IngresoPaciente
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
- 
+
     Private Sub TextBox1_Validating(sender As Object, e As CancelEventArgs) Handles TextBox1.Validating
 
         If DirectCast(sender, TextBox).Text.Length > 0 Then
