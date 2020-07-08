@@ -90,7 +90,7 @@ Partial Class IngresoPaciente
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 19)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 19)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(364, 408)
         Me.GroupBox1.TabIndex = 1
